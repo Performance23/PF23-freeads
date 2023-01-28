@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+@include_once 'customs/auth.php';
+
+@include_once 'customs/home.php';
+Route::group(['middleware' => ['auth']], function(){
 });
+
